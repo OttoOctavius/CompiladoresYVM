@@ -6,7 +6,7 @@
 using namespace std;
 
 bool decodificarflag;
-unsigned char exp=1;
+char expresion;
 unsigned char p = 0;
 unsigned int ip = 0;
 
@@ -28,8 +28,8 @@ void block(){
 }
 
 void fetch(){
-    exp = mem[ip];
-    decodificarflag = !reducida(exp);
+    expresion = mem[ip];
+    decodificarflag = !reducida(expresion);
 }
 
 void decode(){
@@ -38,7 +38,7 @@ void decode(){
 }
 
 void run(){
-    switch(exp){
+    switch(expresion){
         case '+':
             stack[p]++;
             break;
