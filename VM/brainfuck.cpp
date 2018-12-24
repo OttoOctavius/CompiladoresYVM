@@ -61,7 +61,7 @@ void run(){
 
 int main(){
     ifstream myfile;
-    myfile.open ("example.bf");
+    myfile.open ("examplein.bf");
     myfile >> mem;
     myfile.close();
 
