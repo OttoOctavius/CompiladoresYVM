@@ -68,6 +68,7 @@ void run(){
             break;
         case ']':
             block_atras();
+            ip--;
             break;
     }
     ip++;
