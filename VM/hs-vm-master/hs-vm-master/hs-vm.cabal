@@ -1,0 +1,56 @@
+name:                hs-vm
+
+-- The package version.  See the Haskell package versioning policy (PVP)
+-- for standards guiding when and how versions should be incremented.
+-- http://www.haskell.org/haskellwiki/Package_versioning_policy
+-- PVP summary:      +-+------- breaking API changes
+--                   | | +----- non-breaking API additions
+--                   | | | +--- code changes with no API change
+version:             0.1.0.0
+
+synopsis:            Simple Virtual Machine
+
+-- A longer description of the package.
+-- description:
+
+homepage:            https://github.com/taiki45/hs-vm
+license:             MIT
+license-file:        LICENSE
+author:              taiki45
+maintainer:          taiks.4559@gmail.com
+copyright:           ONO Taiki
+category:            Language
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+executable hs-vm
+  main-is:             Main.hs
+
+  other-modules:       Parser
+                     , VM
+                     , VM.Instruction
+                     , VM.Machine
+
+  other-extensions:    TupleSections
+  build-depends:       base >=4.6
+                     , parsec >=3.1
+                     , array >=0.4
+                     , containers >=0.5
+
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+test-suite spec
+  type:              exitcode-stdio-1.0
+  main-is:           Spec.hs
+  hs-source-dirs:    src, test
+  ghc-options:       -Werror
+
+  build-depends:     base >=4.6
+                   , parsec >=3.1
+                   , array >=0.4
+                   , containers >=0.5
+                   , hspec
+
+  default-language:  Haskell2010

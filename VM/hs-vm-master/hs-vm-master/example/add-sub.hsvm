@@ -1,0 +1,14 @@
+# test instructions for:
+#   a = 3 + 4
+#   b = a + 3
+#   b - a
+Label main
+Push 3
+Push 4
+Add
+Dup
+PushLocal
+Push 3
+Add
+PopLocal
+Sub

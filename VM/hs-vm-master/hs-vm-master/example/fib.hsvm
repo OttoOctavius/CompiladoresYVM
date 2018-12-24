@@ -1,0 +1,43 @@
+# def fib(n)
+#   if n == 0
+#     0
+#   elsif n == 1
+#     1
+#   else
+#     fib(n - 1) + fib(n - 2)
+#
+# def main
+#   fib(10) -- shouldBe 55
+Label fib
+Dup
+Push 0
+Eq
+Not
+JumpIf fib if2
+Pop
+Push 0
+Ret
+Label fib if2
+Dup
+Push 1
+Eq
+Not
+JumpIf fib if3
+Pop
+Push 1
+Ret
+Label fib if3
+Dup
+Push 1
+Sub
+Call fib
+PushLocal
+Push 2
+Sub
+Call fib
+PopLocal
+Add
+Ret
+Label main
+Push 10
+Call fib
