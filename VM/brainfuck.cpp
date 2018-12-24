@@ -18,12 +18,19 @@ bool reducida(unsigned char exp){
     return true;
 }
 
-void block(){
-    char temp;
+void block_adelante(){
     while(mem[ip]!=']'){
         if( mem[ip] == '[' )
-            block();
+            block_adelante();
         ip++;
+    }
+}
+
+void block_atras(){
+    while(mem[ip]!='['){
+        if( mem[ip] == ']' )
+            block_atras();
+        ip--;
     }
 }
 
@@ -55,13 +62,20 @@ void run(){
         case '.':
             cout << stack[p];
             break;
+        case '[':
+            if( stack[p] == 0 )
+                block_adelante();
+            break;
+        case ']':
+            block_atras();
+            break;
     }
     ip++;
 }
 
 int main(){
     ifstream myfile;
-    myfile.open ("examplein.bf");
+    myfile.open ("exampleHelloWorld.bf");
     myfile >> mem;
     myfile.close();
 
