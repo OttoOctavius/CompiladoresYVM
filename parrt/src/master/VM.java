@@ -1,24 +1,9 @@
-package vm;
+package master;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static vm.Bytecode.BR;
-import static vm.Bytecode.BRF;
-import static vm.Bytecode.BRT;
-import static vm.Bytecode.GLOAD;
-import static vm.Bytecode.GSTORE;
-import static vm.Bytecode.HALT;
-import static vm.Bytecode.IADD;
-import static vm.Bytecode.ICONST;
-import static vm.Bytecode.IEQ;
-import static vm.Bytecode.ILT;
-import static vm.Bytecode.IMUL;
-import static vm.Bytecode.ISUB;
-import static vm.Bytecode.LOAD;
-import static vm.Bytecode.POP;
-import static vm.Bytecode.PRINT;
-import static vm.Bytecode.STORE;
+import static master.ByteCode.*;
 
 /** A simple stack-based interpreter */
 public class VM {
@@ -137,10 +122,10 @@ public class VM {
 
 	protected String disInstr() {
 		int opcode = code[ip];
-		String opName = Bytecode.instructions[opcode].name;
+		String opName = ByteCode.instructions[opcode].name;
 		StringBuilder buf = new StringBuilder();
 		buf.append(String.format("%04d:\t%-11s", ip, opName));
-		int nargs = Bytecode.instructions[opcode].n;
+		int nargs = ByteCode.instructions[opcode].n;
 		if ( nargs>0 ) {
 			List<String> operands = new ArrayList<String>();
 			for (int i=ip+1; i<=ip+nargs; i++) {

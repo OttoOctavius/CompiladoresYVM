@@ -1,14 +1,14 @@
-package vm;
+package master;
 
-import static vm.Bytecode.BR;
-import static vm.Bytecode.BRF;
-import static vm.Bytecode.GLOAD;
-import static vm.Bytecode.GSTORE;
-import static vm.Bytecode.HALT;
-import static vm.Bytecode.IADD;
-import static vm.Bytecode.ICONST;
-import static vm.Bytecode.ILT;
-import static vm.Bytecode.PRINT;
+import static master.ByteCode.BR;
+import static master.ByteCode.BRF;
+import static master.ByteCode.GLOAD;
+import static master.ByteCode.GSTORE;
+import static master.ByteCode.HALT;
+import static master.ByteCode.IADD;
+import static master.ByteCode.ICONST;
+import static master.ByteCode.ILT;
+import static master.ByteCode.PRINT;
 
 public class Test {
 	static int[] hello = {

@@ -1,4 +1,4 @@
-package vm;
+package addfunc;
 
 public class Bytecode {
 	public static class Instruction {
@@ -19,15 +19,18 @@ public class Bytecode {
 	public static final short IEQ  = 5;     // int equal
 	public static final short BR   = 6;     // branch
 	public static final short BRT  = 7;     // branch if true
-	public static final short BRF  = 8;    // branch if false
-	public static final short ICONST = 9;  // push constant integer
+	public static final short BRF  = 8;     // branch if true
+	public static final short ICONST = 9;   // push constant integer
 	public static final short LOAD   = 10;  // load from local context
 	public static final short GLOAD  = 11;  // load from global memory
 	public static final short STORE  = 12;  // store in local context
 	public static final short GSTORE = 13;  // store in global memory
 	public static final short PRINT  = 14;  // print stack top
 	public static final short POP  = 15;    // throw away top of stack
-	public static final short HALT = 16;
+	public static final short CALL = 16;
+	public static final short RET  = 17;    // return with/without value
+
+	public static final short HALT = 18;
 
 	public static Instruction[] instructions = new Instruction[] {
 		null, // <INVALID>
@@ -46,6 +49,8 @@ public class Bytecode {
 		new Instruction("gstore", 1),
 		new Instruction("print"),
 		new Instruction("pop"),
+		new Instruction("call", 2), // call addr, nargs
+		new Instruction("ret"),
 		new Instruction("halt")
 	};
 }

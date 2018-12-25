@@ -1,19 +1,19 @@
-package vm;
+package addfunc;
 
-import static vm.Bytecode.BR;
-import static vm.Bytecode.BRF;
-import static vm.Bytecode.CALL;
-import static vm.Bytecode.GLOAD;
-import static vm.Bytecode.GSTORE;
-import static vm.Bytecode.HALT;
-import static vm.Bytecode.IADD;
-import static vm.Bytecode.ICONST;
-import static vm.Bytecode.ILT;
-import static vm.Bytecode.IMUL;
-import static vm.Bytecode.ISUB;
-import static vm.Bytecode.LOAD;
-import static vm.Bytecode.PRINT;
-import static vm.Bytecode.RET;
+import static addfunc.Bytecode.BR;
+import static addfunc.Bytecode.BRF;
+import static addfunc.Bytecode.CALL;
+import static addfunc.Bytecode.GLOAD;
+import static addfunc.Bytecode.GSTORE;
+import static addfunc.Bytecode.HALT;
+import static addfunc.Bytecode.IADD;
+import static addfunc.Bytecode.ICONST;
+import static addfunc.Bytecode.ILT;
+import static addfunc.Bytecode.IMUL;
+import static addfunc.Bytecode.ISUB;
+import static addfunc.Bytecode.LOAD;
+import static addfunc.Bytecode.PRINT;
+import static addfunc.Bytecode.RET;
 
 public class Test {
 	static int[] hello = {
